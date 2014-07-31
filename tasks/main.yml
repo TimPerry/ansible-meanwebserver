@@ -1,0 +1,13 @@
+---
+- name: Install NodeJS
+  apt: name=nodejs update_cache=yes
+- name: Install NPM
+  apt: name=npm update_cache=yes
+- name: Install MongoDB
+  apt: name=mongodb update_cache=yes
+- name: Install Forever
+  npm: name=forever global=yes
+- name: Install ExpressJS
+  npm: name=express global=yes
+- name: Fix node path
+  command: ln -s /usr/bin/nodejs /usr/bin/node creates=/usr/bin/node
